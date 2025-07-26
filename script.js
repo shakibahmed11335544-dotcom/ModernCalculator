@@ -36,3 +36,20 @@ function toggleSign() {
     display.innerText = '-' + display.innerText;
   }
 }
+
+function calculateFunction(func) {
+  let value = parseFloat(display.innerText);
+  if (isNaN(value)) return;
+  let result = 0;
+  switch (func) {
+    case 'sin': result = Math.sin(value * Math.PI / 180); break;
+    case 'cos': result = Math.cos(value * Math.PI / 180); break;
+    case 'tan': result = Math.tan(value * Math.PI / 180); break;
+    case 'sqrt': result = Math.sqrt(value); break;
+    case 'log': result = Math.log10(value); break;
+    case 'ln': result = Math.log(value); break;
+    case 'square': result = Math.pow(value, 2); break;
+    case 'pi': result = Math.PI; break;
+  }
+  display.innerText = parseFloat(result.toFixed(8));
+}
